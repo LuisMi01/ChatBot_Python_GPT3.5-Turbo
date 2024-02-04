@@ -6,7 +6,7 @@ chat_history = []
 
     
 while True: 
-    prompt = input("Ingresa el mensaje al char")
+    prompt = input("Ingresa el mensaje al chat: \n")
     
     if prompt == "exit":
         break

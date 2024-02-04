@@ -17,3 +17,5 @@ collected_messages = []
 
 for chunk in response:
     chunk_message = chunk['choices'][0]['delta']
+    collected_messages.append(chunk_message)
+    print(collected_messages)

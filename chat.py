@@ -18,4 +18,11 @@ collected_messages = []
 for chunk in response:
     chunk_message = chunk['choices'][0]['delta']
     collected_messages.append(chunk_message)
-    print(collected_messages)
+    fully_reply_content = ''.join([m.get('content', '') for m in collected_messages]) #Extraigo cada uno de los mensajes de los chunks y los uno para que sean una sola "frase"
+    print("\033[H\033[J", end="")
+    
+    
+    
+    
+    
+    

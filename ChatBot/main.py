@@ -1,7 +1,10 @@
+import os
 import config
-import openai
+from openai import OpenAI
 
-openai.api_key = config.api_key
+client = OpenAI(
+    api_key=config.OPENAI_API_KEY
+    )
 
 chat_history = []
 
@@ -15,11 +18,11 @@ while True:
         
         chat_history.append({"role" : "user",  "message" : prompt})
         
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages= chat_history,
-            max_tokens= 350,
-            stram=True
+            max_tokens= 4000,
+            stream=True
         )
 
         collected_messages = []
